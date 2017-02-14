@@ -4,14 +4,14 @@
 
     <parent>
         <groupId>org.openmrs.module</groupId>
-        <artifactId>radiologyapp</artifactId>
+        <artifactId>appointmentapp</artifactId>
         <version>1.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>radiologyapp-omod</artifactId>
+    <artifactId>appointmentapp-omod</artifactId>
     <packaging>jar</packaging>
-    <name>RadiologyApp Module OMOD</name>
-    <description>OMOD project for RadiologyApp</description>
+    <name>Appointment App Module OMOD</name>
+    <description>OMOD project for Appointment App</description>
 
     <dependencies>
 

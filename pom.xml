@@ -4,16 +4,16 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.openmrs.module</groupId>
-    <artifactId>radiologyapp</artifactId>
+    <artifactId>appointmentapp</artifactId>
     <version>1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>RadiologyApp Module</name>
-    <description>This is the module for the radiology department</description>
+    <name>Appointment App Module</name>
+    <description>This is the module for the appointment department</description>
     <url>https://wiki.openmrs.org/display/docs/RadiologyApp+Module+Module</url>
 
     <developers>
         <developer>
-            <name>Bespoke Devs</name>
+            <name>Stanslaus, Francis, Kennedy</name>
         </developer>
     </developers>
 
@@ -23,9 +23,9 @@
     </organization>
 
     <scm>
-        <connection>scm:svn:https://svn.openmrs.org/openmrs-modules/radiologyapp/trunk/</connection>
-        <developerConnection>scm:svn:https://svn.openmrs.org/openmrs-modules/radiologyapp/trunk/</developerConnection>
-        <url>https://svn.openmrs.org/openmrs-modules/radiologyapp/trunk/</url>
+        <connection>scm:svn:https://svn.openmrs.org/openmrs-modules/appointmentapp/trunk/</connection>
+        <developerConnection>scm:svn:https://svn.openmrs.org/openmrs-modules/appointmentapp/trunk/</developerConnection>
+        <url>https://svn.openmrs.org/openmrs-modules/appointmentapp/trunk/</url>
     </scm>
 
     <modules>

@@ -7,7 +7,7 @@
 	<name>${project.parent.name}</name>
 	<version>${project.parent.version}</version>
 	<package>${project.parent.groupId}.${project.parent.artifactId}</package>
-	<author>Victor</author>
+	<author>Stanslaus, Francis, Kennedy</author>
 	<description>
 		${project.parent.description}
 	</description>
@@ -55,8 +55,8 @@
 
 	<!-- Internationalization -->
 	<privilege>
-		<name>App: radiologyapp</name>
-		<description>Able to access radiologyapp</description>
+		<name>App: appointmentapp</name>
+		<description>Able to access Appointments</description>
 	</privilege>
 	<!-- All message codes should start with ${project.parent.artifactId}. -->
 	<messages>
