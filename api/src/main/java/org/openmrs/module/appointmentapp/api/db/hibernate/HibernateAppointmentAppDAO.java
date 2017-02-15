@@ -16,12 +16,12 @@ package org.openmrs.module.appointmentapp.api.db.hibernate;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.SessionFactory;
-import org.openmrs.module.appointmentapp.api.db.RadiologyAppDAO;
+import org.openmrs.module.appointmentapp.api.db.AppointmentAppDAO;
 
 /**
- * It is a default implementation of  {@link RadiologyAppDAO}.
+ * It is a default implementation of  {@link AppointmentAppDAO}.
  */
-public class HibernateRadiologyAppDAO implements RadiologyAppDAO {
+public class HibernateAppointmentAppDAO implements AppointmentAppDAO {
 	protected final Log log = LogFactory.getLog(this.getClass());
 	
 	private SessionFactory sessionFactory;

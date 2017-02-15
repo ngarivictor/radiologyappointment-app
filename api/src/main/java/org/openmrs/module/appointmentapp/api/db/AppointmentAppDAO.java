@@ -11,20 +11,16 @@
  *
  * Copyright (C) OpenMRS, LLC.  All Rights Reserved.
  */
-package org.openmrs.module.appointmentapp.api;
+package org.openmrs.module.appointmentapp.api.db;
 
-import static org.junit.Assert.*;
-import org.junit.Test;
-import org.openmrs.api.context.Context;
-import org.openmrs.test.BaseModuleContextSensitiveTest;
+import org.openmrs.module.appointmentapp.api.AppointmentAppService;
 
 /**
- * Tests {@link ${RadiologyAppService}}.
+ *  Database methods for {@link AppointmentAppService}.
  */
-public class  RadiologyAppServiceTest extends BaseModuleContextSensitiveTest {
+public interface AppointmentAppDAO {
 	
-	@Test
-	public void shouldSetupContext() {
-		assertNotNull(Context.getService(RadiologyAppService.class));
-	}
+	/*
+	 * Add DAO methods here
+	 */
 }

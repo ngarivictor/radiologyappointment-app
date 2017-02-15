@@ -37,7 +37,7 @@
 	<!-- / Required Modules -->
 	
 	<!-- Module Activator -->
-	<activator>${project.parent.groupId}.${project.parent.artifactId}.RadiologyAppActivator</activator>
+	<activator>${project.parent.groupId}.${project.parent.artifactId}.AppointmentAppActivator</activator>
 	
 	
 	<!-- Adds link to admin page -->
@@ -48,8 +48,8 @@
 	
 	<!-- Maps hibernate file's, if present -->
 	<mappingFiles>
-				
-		RadiologyApp.hbm.xml
+
+		AppointmentApp.hbm.xml
 				
 	</mappingFiles>
 

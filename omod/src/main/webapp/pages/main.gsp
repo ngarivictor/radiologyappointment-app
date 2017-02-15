@@ -1,9 +1,9 @@
 <%
-    ui.decorateWith("appui", "standardEmrPage", [title: "Radiology"])
-    ui.includeCss("radiologyapp", "radiology.css")
+    ui.decorateWith("appui", "standardEmrPage", [title: "Appointment Scheduling"])
+    ui.includeCss("appointmentapp", "radiology.css")
     ui.includeJavascript("uicommons", "moment.js")
-    ui.includeJavascript("radiologyapp", "jquery.form.js")
-    ui.includeJavascript("radiologyapp", "jq.browser.select.js")
+    ui.includeJavascript("appointmentapp", "jquery.form.js")
+    ui.includeJavascript("appointmentapp", "jq.browser.select.js")
 %>
 
 <script>
@@ -219,7 +219,7 @@ form input[type="checkbox"] {
 
                 <li>
                     <i class="icon-chevron-right link"></i>
-                    Radiology
+                    Appointment Scheduling
                 </li>
             </ul>
         </div>
@@ -252,19 +252,19 @@ form input[type="checkbox"] {
             </ul>
 
             <div id="queue">
-                ${ui.includeFragment("radiologyapp", "queue")}
+                ${ui.includeFragment("appointmentapp", "queue")}
             </div>
 
             <div id="worklist">
-                ${ui.includeFragment("radiologyapp", "worklist", [investigations: investigations])}
+                ${ui.includeFragment("appointmentapp", "worklist", [investigations: investigations])}
             </div>
 
             <div id="results">
-                ${ui.includeFragment("radiologyapp", "results")}
+                ${ui.includeFragment("appointmentapp", "results")}
             </div>
 
             <div id="status">
-                ${ui.includeFragment("radiologyapp", "functionalStatus")}
+                ${ui.includeFragment("appointmentapp", "functionalStatus")}
             </div>
         </div>
     </div>

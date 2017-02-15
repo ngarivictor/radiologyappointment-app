@@ -21,13 +21,13 @@ import org.springframework.transaction.annotation.Transactional;
  * <p>
  * It can be accessed only via Context:<br>
  * <code>
- * Context.getService(RadiologyAppService.class).someMethod();
+ * Context.getService(AppointmentAppService.class).someMethod();
  * </code>
  * 
  * @see org.openmrs.api.context.Context
  */
 @Transactional
-public interface RadiologyAppService extends OpenmrsService {
+public interface AppointmentAppService extends OpenmrsService {
      
 	/*
 	 * Add service methods here

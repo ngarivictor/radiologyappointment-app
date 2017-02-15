@@ -21,7 +21,7 @@ import org.openmrs.module.ModuleActivator;
 /**
  * This class contains the logic that is run every time this module is either started or stopped.
  */
-public class RadiologyAppActivator implements ModuleActivator {
+public class AppointmentAppActivator implements ModuleActivator {
 	
 	protected Log log = LogFactory.getLog(getClass());
 		
@@ -29,42 +29,42 @@ public class RadiologyAppActivator implements ModuleActivator {
 	 * @see ModuleActivator#willRefreshContext()
 	 */
 	public void willRefreshContext() {
-		log.info("Refreshing RadiologyApp Module");
+		log.info("Refreshing AppointmentApp Module");
 	}
 	
 	/**
 	 * @see ModuleActivator#contextRefreshed()
 	 */
 	public void contextRefreshed() {
-		log.info("RadiologyApp Module refreshed");
+		log.info("AppointmentApp Module refreshed");
 	}
 	
 	/**
 	 * @see ModuleActivator#willStart()
 	 */
 	public void willStart() {
-		log.info("Starting RadiologyApp Module");
+		log.info("Starting AppointmentApp Module");
 	}
 	
 	/**
 	 * @see ModuleActivator#started()
 	 */
 	public void started() {
-		log.info("RadiologyApp Module started");
+		log.info("AppointmentApp Module started");
 	}
 	
 	/**
 	 * @see ModuleActivator#willStop()
 	 */
 	public void willStop() {
-		log.info("Stopping RadiologyApp Module");
+		log.info("Stopping AppointmentApp Module");
 	}
 	
 	/**
 	 * @see ModuleActivator#stopped()
 	 */
 	public void stopped() {
-		log.info("RadiologyApp Module stopped");
+		log.info("AppointmentApp Module stopped");
 	}
 		
 }

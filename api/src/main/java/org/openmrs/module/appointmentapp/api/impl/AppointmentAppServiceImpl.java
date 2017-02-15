@@ -16,29 +16,29 @@ package org.openmrs.module.appointmentapp.api.impl;
 import org.openmrs.api.impl.BaseOpenmrsService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.openmrs.module.appointmentapp.api.RadiologyAppService;
-import org.openmrs.module.appointmentapp.api.db.RadiologyAppDAO;
+import org.openmrs.module.appointmentapp.api.AppointmentAppService;
+import org.openmrs.module.appointmentapp.api.db.AppointmentAppDAO;
 
 /**
- * It is a default implementation of {@link RadiologyAppService}.
+ * It is a default implementation of {@link AppointmentAppService}.
  */
-public class RadiologyAppServiceImpl extends BaseOpenmrsService implements RadiologyAppService {
+public class AppointmentAppServiceImpl extends BaseOpenmrsService implements AppointmentAppService {
 	
 	protected final Log log = LogFactory.getLog(this.getClass());
 	
-	private RadiologyAppDAO dao;
+	private AppointmentAppDAO dao;
 	
 	/**
      * @param dao the dao to set
      */
-    public void setDao(RadiologyAppDAO dao) {
+    public void setDao(AppointmentAppDAO dao) {
 	    this.dao = dao;
     }
     
     /**
      * @return the dao
      */
-    public RadiologyAppDAO getDao() {
+    public AppointmentAppDAO getDao() {
 	    return dao;
     }
 }
