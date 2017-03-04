@@ -6,48 +6,7 @@
     ui.includeJavascript("appointmentapp", "jq.browser.select.js")
 %>
 
-<script>
-    jq(function () {
-        jq(".radiology-tabs").tabs();
 
-        jq("#refresh").on("click", function () {
-            if (jq('#queue').is(':visible')) {
-                getQueueData();
-            }
-            else if (jq('#worklist').is(':visible')) {
-                getWorklistData();
-            }
-            else if (jq('#results').is(':visible')) {
-                getResultsData();
-            }
-            else {
-                jq().toastmessage('showErrorToast', "Tab Content not Available");
-            }
-        });
-
-        jq("#inline-tabs li").click(function () {
-            if (jq(this).attr("aria-controls") == "queue") {
-                jq('#refresh a').html('<i class="icon-refresh"></i> Get Patients');
-                jq('#refresh a').show(500);
-                getQueueData(false);
-            }
-            else if (jq(this).attr("aria-controls") == "worklist") {
-                jq('#refresh a').html('<i class="icon-refresh"></i> Get Worklist');
-                jq('#refresh a').show(500);
-                getWorklistData(false);
-            }
-            else if (jq(this).attr("aria-controls") == "results") {
-                jq('#refresh a').html('<i class="icon-refresh"></i> Get Results');
-                jq('#refresh a').show(500);
-                getResultsData(false);
-            }
-            else if (jq(this).attr("aria-controls") == "status") {
-                jq('#refresh a').hide(500);
-                getBillableServices();
-            }
-        });
-    });
-</script>
 
 <style>
 .new-patient-header .identifiers {
@@ -235,38 +194,53 @@ form input[type="checkbox"] {
         <div class="show-icon">
             &nbsp;
         </div>
+    </div>
 
-        <div class="radiology-tabs" style="margin-top: 12px;">
-            <ul id="inline-tabs">
-                <li><a href="#queue">Queue</a></li>
-                <li><a href="#worklist">Worklist</a></li>
-                <li><a href="#results">Results</a></li>
-                <li><a href="#status">Functional Status</a></li>
+    <div id="apps">
 
-                <li id="refresh" class="ui-state-default">
-                    <a style="color:#fff" class="button confirm">
-                        <i class="icon-refresh"></i>
-                        Get Patients
-                    </a>
-                </li>
-            </ul>
+        <% if (context.hasPrivilege("App: appointmentschedulingui.appointmentTypes")) { %>
+        <a class="button app big" href="${ui.pageLink("appointmentschedulingui", "manageAppointmentTypes")}"
+           id="appointmentschedulingui-manageAppointmentTypes-app">
+            <i class="icon-calendar"></i>
+            ${ui.message("appointmentschedulingui.appointmenttype.label")}
+        </a>
+        <% } %>
 
-            <div id="queue">
-                ${ui.includeFragment("appointmentapp", "queue")}
-            </div>
+        <% if (context.hasPrivilege("App: appointmentschedulingui.providerSchedules")) { %>
+        <a class="button app big" href="${ui.pageLink("appointmentschedulingui", "scheduleProviders")}"
+           id="appointmentschedulingui-scheduleProviders-app">
+            <i class="icon-calendar"></i>
+            ${ui.message("appointmentschedulingui.scheduleProviders.app.title")}
+        </a>
+        <% } %>
 
-            <div id="worklist">
-                ${ui.includeFragment("appointmentapp", "worklist", [investigations: investigations])}
-            </div>
+        <% if (context.hasPrivilege("App: appointmentschedulingui.viewAppointments")) { %>
+        <a class="button app big" href="${
+                ui.pageLink("coreapps", "findpatient/findPatient", [app: "appointmentschedulingui.schedulingAppointmentApp"])}"
+           id="appointmentschedulingui-manageAppointments-app">
+            <i class="icon-calendar"></i>
+            ${ui.message("appointmentschedulingui.scheduleAppointment.buttonTitle")}
+        </a>
+        <% } %>
 
-            <div id="results">
-                ${ui.includeFragment("appointmentapp", "results")}
-            </div>
+        <% if (context.hasPrivilege("App: appointmentschedulingui.viewAppointments")) { %>
+        <a class="button app big" href="${ui.pageLink("appointmentschedulingui", "dailyScheduledAppointments")}"
+           id="appointmentschedulingui-scheduledAppointments-app">
+            <i class="icon-calendar"></i>
+            ${ui.message("appointmentschedulingui.dailyScheduledAppointments.title")}
+        </a>
+        <% } %>
 
-            <div id="status">
-                ${ui.includeFragment("appointmentapp", "functionalStatus")}
-            </div>
-        </div>
+
+
+        <% if (context.hasPrivilege("Task: appointmentschedulingui.bookAppointments")) { %>
+        <a class="button app big" href="${ui.pageLink("appointmentschedulingui", "appointmentRequests")}"
+           id="appointmentschedulingui-appointmentRequests-app">
+            <i class="icon-calendar"></i>
+            ${ui.message("appointmentschedulingui.appointmentRequests.title")}
+        </a>
+        <% } %>
+
     </div>
 </div>
 
