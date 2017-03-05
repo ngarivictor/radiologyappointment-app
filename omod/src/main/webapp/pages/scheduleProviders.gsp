@@ -1,5 +1,5 @@
 <%
-    ui.decorateWith("appui", "standardEmrPage", [title: "Appointment Scheduling"])
+    ui.decorateWith("appui", "standardEmrPage", [title: "Manage Appointment Blocks"])
     ui.includeCss("appointmentapp", "radiology.css")
     ui.includeJavascript("uicommons", "moment.js")
     ui.includeJavascript("appointmentapp", "jquery.form.js")
@@ -173,12 +173,19 @@ form input[type="checkbox"] {
             <ul id="breadcrumbs">
                 <li>
                     <a href="${ui.pageLink('referenceapplication', 'home')}">
-                        <i class="icon-home small"></i></a>
+                        <i class="icon-home small"></i>
+                    </a>
                 </li>
 
                 <li>
+                    <a href="${ui.pageLink('appointmentapp', 'main')}">
+                        <i class="icon-chevron-right link"></i>
+                        Appointment Scheduling
+                    </a>
+                </li>
+                <li>
                     <i class="icon-chevron-right link"></i>
-                    Appointment Scheduling
+                    Manage Appointment Blocks
                 </li>
             </ul>
         </div>
@@ -187,7 +194,7 @@ form input[type="checkbox"] {
     <div class="patient-header new-patient-header">
         <div class="demographics">
             <h1 class="name" style="border-bottom: 1px solid #ddd;">
-                <span>&nbsp;APPOINTMENT SCHEDULING MODULE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+                <span>&nbsp;MANAGE APPOINTMENT BLOCKS &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
             </h1>
         </div>
 
@@ -196,50 +203,4 @@ form input[type="checkbox"] {
         </div>
     </div>
 
-    <div id="apps">
-
-        <% if (context.hasPrivilege("App: appointmentschedulingui.appointmentTypes")) { %>
-        <a class="button app big" href="${ui.pageLink("appointmentapp", "manageAppointmentTypes")}"
-           id="appointmentschedulingui-manageAppointmentTypes-app">
-            <i class="icon-user-md"></i>
-            ${ui.message("appointmentschedulingui.appointmenttype.label")}
-        </a>
-        <% } %>
-
-        <% if (context.hasPrivilege("App: appointmentschedulingui.providerSchedules")) { %>
-        <a class="button app big" href="${ui.pageLink("appointmentapp", "scheduleProviders")}"
-           id="appointmentschedulingui-scheduleProviders-app">
-            <i class="icon-group"></i>
-            ${ui.message("appointmentschedulingui.scheduleProviders.app.title")}
-        </a>
-        <% } %>
-
-        <% if (context.hasPrivilege("App: appointmentschedulingui.viewAppointments")) { %>
-        <a class="button app big" href="${ui.pageLink("appointmentapp", "manageAppointments")}"
-           id="appointmentschedulingui-manageAppointments-app">
-            <i class="icon-stethoscope"></i>
-            ${ui.message("appointmentschedulingui.scheduleAppointment.buttonTitle")}
-        </a>
-        <% } %>
-
-        <% if (context.hasPrivilege("App: appointmentschedulingui.viewAppointments")) { %>
-        <a class="button app big" href="${ui.pageLink("appointmentapp", "dailyScheduledAppointments")}"
-           id="appointmentschedulingui-scheduledAppointments-app">
-            <i class="icon-user"></i>
-            ${ui.message("appointmentschedulingui.dailyScheduledAppointments.title")}
-        </a>
-        <% } %>
-
-
-
-        <% if (context.hasPrivilege("Task: appointmentschedulingui.bookAppointments")) { %>
-        <a class="button app big" href="${ui.pageLink("appointmentapp", "appointmentStatistics")}"
-           id="appointmentschedulingui-appointmentRequests-app">
-            <i class="icon-medkit"></i>
-            ${ui.message("appointmentapp.statistics.title")}
-        </a>
-        <% } %>
-
-    </div>
 </div>
-

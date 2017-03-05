@@ -36,6 +36,7 @@
     <properties>
         <openMRSVersion>1.9.8</openMRSVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <appointmentschedulingVersion>1.4</appointmentschedulingVersion>
     </properties>
 
     <dependencyManagement>
@@ -58,6 +59,12 @@
                 <groupId>org.openmrs.module</groupId>
                 <artifactId>uiframework-api</artifactId>
                 <version>3.3.1</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.openmrs.module</groupId>
+                <artifactId>appointmentscheduling-api</artifactId>
+                <version>${appointmentschedulingVersion}</version>
                 <scope>provided</scope>
             </dependency>
 
