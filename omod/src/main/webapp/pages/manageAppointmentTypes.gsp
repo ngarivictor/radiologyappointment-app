@@ -1,10 +1,50 @@
 <%
     ui.decorateWith("appui", "standardEmrPage", [title: "Manage Appointment Types"])
     ui.includeCss("appointmentapp", "radiology.css")
+    ui.includeCss("appointmentapp", "createAppointmentStyle.css")
+    ui.includeCss("appointmentapp", "appointmentTypeList_jQueryDatatable.css")
     ui.includeJavascript("uicommons", "moment.js")
     ui.includeJavascript("appointmentapp", "jquery.form.js")
     ui.includeJavascript("appointmentapp", "jq.browser.select.js")
+    ui.includeJavascript("appointmentapp", "jquery.dataTables.js")
 %>
+
+<script type="text/javascript">
+    jq(function () {
+        var resultMessage = "${resultMessage}";
+        if (resultMessage != "") {
+            emr.successMessage(resultMessage);
+        }
+        jq('#appointmentTypesTable')
+                .dataTable(
+                        {
+                            "aoColumns": [{
+                                "bSortable": true
+                            }, {
+                                "bSortable": false
+                            }, {
+                                "bSortable": true
+                            }],
+                            "aLengthMenu": [
+                                [5, 10, 25, 50, -1],
+                                [5, 10, 25, 50, "All"]],
+                            "iDisplayLength": 5,
+                            "sDom": "<'fg-toolbar ui-toolbar ui-widget-header ui-corner-tl ui-corner-tr ui-helper-clearfix'l<'addons'>>t<'fg-toolbar ui-toolbar ui-widget-header ui-corner-bl ui-corner-br ui-helper-clearfix'ipT<'toolbar'>>",
+                            "bLengthChange": true,
+                            "bFilter": false,
+                            "bInfo": true,
+                            "bPaginate": true,
+                            "bJQueryUI": true,
+
+                            "fnDrawCallback": function () {
+                                jq(".addons").html("");
+                                jq(".addons").prepend(
+                                        "<% if (context.hasPrivilege("Manage Appointment Types")) { %> <input type='button' value='${ ui.message('appointmentscheduling.AppointmentType.add') }' class='saveButton' style='margin:10px; float:right; display:block;' onclick='addNewAppointmentType()'/><% } %>");
+                            },
+                        });
+    });
+
+</script>
 
 
 
@@ -201,12 +241,22 @@ form input[type="checkbox"] {
         <div class="show-icon">
             &nbsp;
         </div>
-        <div>
 
-${appointmentTypeList}
-        </div>
 
+        <form method="post" class="box">
+            <table id="appointmentTypesTable">
+                <thead>
+                <tr>
+                    <th>${ui.message("general.name")}</th>
+                    <th>${ui.message("general.description")}</th>
+                    <th>${ui.message("appointmentapp.AppointmentType.duration")}</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </form>
     </div>
-
 
 </div>
