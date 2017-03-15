@@ -44,6 +44,10 @@
                         });
     });
 
+
+    function addNewAppointmentType() {
+        window.location = "${ui.pageLink("appointmentapp", "appointmentType")}";
+    }
 </script>
 
 
@@ -254,6 +258,20 @@ form input[type="checkbox"] {
                 </thead>
                 <tbody>
 
+                <% appointmentTypeList.eachWithIndex { it, index -> %>
+                <tr>
+                    <td valign="top">
+                        <a href="appointmentType.page?appointmentTypeId=${it.appointmentTypeId}" >
+                            ${it.name}
+                        </a>
+                    </td>
+                    <td valign="top"><% if (it?.description != null) { %>
+                    ${it.description}
+                    <% } %>
+                    </td>
+                    <td valign="top">${it.duration}</td>
+                </tr>
+                <% } %>
                 </tbody>
             </table>
         </form>
