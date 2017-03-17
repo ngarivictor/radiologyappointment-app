@@ -1,0 +1,84 @@
+#searchParameters {
+    display: inline-block;
+}
+
+.inlineBox {
+    float: left;
+    margin-right: 10px;
+}
+
+.confirmAppointmentInfo {
+    font-family: 'OpenSansBold';
+    font-size: 1.2em;
+}
+
+#viewAllAppointmentTypes {
+    font-size: 12px;
+    margin-top: 29px;
+    margin-right: 40px;
+}
+
+#searchButtons {
+    padding: 5px;
+    padding-left: 0px;
+}
+
+#filter {
+    padding: 5px;
+    padding-bottom: 10px;
+}
+
+#noTimeSlots {
+    padding: 5px;
+}
+
+#selectAppointment {
+    padding-top: 10px;
+}
+
+#confirmAppointment div {
+    padding: 5px;
+}
+
+#appointmentReason {
+    width: 400px;
+    height: 100px;
+}
+
+#appointmentCancelReason {
+    width: 350px;
+    height: 100px;
+}
+
+#allAppointmentTypesModal {
+    position: absolute;
+    z-index: 999;
+}
+
+.notes {
+    margin-top: 30px;
+}
+
+.appointment-filters {
+    margin-bottom: 20px;
+}
+
+#appointmentTable {
+    width: 900px;
+    height: 350px;
+}
+
+.scheduleAppointmentTitle {
+    margin-top: 40px;
+}
+
+#scheduledAppointmentTable_wrapper {
+    min-height: 0px;
+}
+
+#confirm-cancel-appointment {
+    position: absolute;
+    top: 200px;
+    left: 500px;
+    z-index: 999;
+}

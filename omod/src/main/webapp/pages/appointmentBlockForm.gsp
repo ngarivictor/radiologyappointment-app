@@ -215,7 +215,7 @@ form input[type="checkbox"] {
     <div class="patient-header new-patient-header">
         <div class="demographics">
             <h1 class="name" style="border-bottom: 1px solid #ddd;">
-                <span>&nbsp;${ui.message("appointmentschedulingui.appointmenttype.title")} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+                <span>&nbsp;${ui.message("appointmentapp.ProviderScheduling.title")} &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
             </h1>
         </div>
 
@@ -224,72 +224,7 @@ form input[type="checkbox"] {
         </div>
 
         <div>
-            <form method="post">
-                <fieldset>
-                    <table>
-                        <tr class="boxHeader steps">
-                            <td colspan="2">${ui.message("appointmentscheduling.AppointmentType.steps.details")}</td>
-                        </tr>
-                        <tr>
-                            <td>
-                                ${ui.includeFragment("uicommons", "field/text", [
-                                        label        : ui.message("appointmentschedulingui.appointmenttype.name"),
-                                        formFieldName: "name",
-                                        id           : "name",
-                                        maxLength    : 100,
-                                        initialValue : (appointmentType.name ?: '')
-                                ])}
-                            </td>
 
-                            <td>
-                                ${ui.includeFragment("uicommons", "field/text", [
-                                        label        : ui.message("appointmentschedulingui.appointmenttype.duration"),
-                                        formFieldName: "duration",
-                                        id           : "duration",
-                                        initialValue : (appointmentType.duration ?: '')
-                                ])}
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td colspan="2">
-                                <% if (featureToggles.isFeatureEnabled("appointmentscheduling.confidential")) { %>
-                                ${ui.includeFragment("uicommons", "field/radioButtons", [
-                                        label        : ui.message("appointmentschedulingui.appointmenttype.confidential"),
-                                        formFieldName: "confidential",
-                                        options      : [
-                                                [value: "false", label: ui.message("emr.no")],
-                                                [value: "true", label: ui.message("emr.yes")]
-                                        ],
-                                        id           : "confidential",
-                                        initialValue : (appointmentType.confidential?.toString() ?: "false")
-                                ])}
-                                <% } %>
-
-                                ${ui.includeFragment("uicommons", "field/textarea", [
-                                        label        : ui.message("appointmentschedulingui.appointmenttype.optionalDescription"),
-                                        formFieldName: "description",
-                                        id           : "description",
-                                        initialValue : (appointmentType.description ?: '')
-                                ])}
-
-                                <input type="hidden" value="${appointmentType.uuid}" name="uuid">
-                            </td>
-
-                        </tr>
-
-                    </table>
-                    <br/>
-
-                    <input type="submit" class="appointmentButton confirm"
-                           value="${ui.message('appointmentscheduling.AppointmentType.save')}" name="save" />
-                    <input type="button" class="cancel"
-                           value="${ui.message('appointmentapp.AppointmentType.retire')}" name="retire" />
-                    <input type="button" class="cancel right"
-                           value="${ui.message('appointmentapp.AppointmentType.purge')}" name="purge" />
-
-                </fieldset>
-            </form>
 
         </div>
     </div>
