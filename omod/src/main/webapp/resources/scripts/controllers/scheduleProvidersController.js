@@ -250,6 +250,13 @@ angular.module('appointmentscheduling.scheduleProviders')
             $scope.disableSaveButton = true;
 
         }
+        $scope.scheduleAppointment = function(appointmentBlockId) {
+            $scope.appointmentBlockFormErrorMessages = [];
+            window.location.href = emr.pageLink("appointmentapp", "findPatient", {
+                "appointmentBlockId": appointmentBlockId
+            });
+
+        }
 
         $scope.saveAppointmentBlock = function() {
             $scope.appointmentBlockFormErrorMessages = [];

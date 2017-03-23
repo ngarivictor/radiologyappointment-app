@@ -1,0 +1,22 @@
+#appointmentRequestsGridTable {
+    width: 900px;
+}
+
+#appointmentRequestsGridTable .col3 {
+    text-align: center;
+}
+
+#confirm-cancel-appointment-request {
+    z-index: 999;
+    overflow: hidden;
+}
+
+#appointment-request-notes {
+    z-index: 999;
+    overflow: hidden;
+}
+
+.inline-box {
+    display: inline-block;
+    padding: 5px;
+}

@@ -61,7 +61,7 @@ angular.module('appointmentscheduling')
                     emr.navigateTo({ url: $scope.returnUrl });
                 } else {
                     emr.navigateTo({
-                        provider: 'appointmentschedulingui',
+                        provider: 'appointmentapp',
                         page: 'sessionInfo',
                         query: { patientUuid: $scope.patientUuid }
                     });

@@ -18,7 +18,7 @@
     ui.includeJavascript("uicommons", "fullcalendar/fullcalendar.min.js")
     ui.includeJavascript("uicommons", "fullcalendar/gcal.js")
     ui.includeCss("uicommons", "fullcalendar/fullcalendar.css")
-    ui.includeJavascript("uicommons", "moment-with-locales.min.js")
+//    ui.includeJavascript("uicommons", "moment-with-locales.min.js")
 
     ui.includeJavascript("uicommons", "emr.js")
 
@@ -371,7 +371,10 @@ form input[type="checkbox"] {
                     <p>{{ appointmentBlock.startDate | date: 'MMM d' }}, {{ appointmentBlock.startDate | date: 'hh:mm a' }} - {{ appointmentBlock.endDate | date: 'hh:mm a' }}</p>
                     <p>${ ui.message('uicommons.provider') }: {{ appointmentBlock.provider.person.display }}</p>
                     <p>${ ui.message('appointmentschedulingui.appointmenttypes') }: <span ng-repeat="type in appointmentBlock.types"> {{ type.display }}{{ !\$last ? ', ' : '' }}</span> </p>
-                    <p><a class="tooltip-link" ng-click="editAppointmentBlock(appointmentBlock.types)">${ ui.message('uicommons.edit')}</a>  <a class="tooltip-link" ng-click="showDeleteAppointmentBlockModal()">${ ui.message('uicommons.delete') }</a></p>
+                    <p>
+                        <a class="tooltip-link" ng-click="scheduleAppointment(appointmentBlock.uuid)">${ ui.message('appointmentapp.Appointment.schedule')}</a>
+                        <a class="tooltip-link" ng-click="editAppointmentBlock(appointmentBlock.types)">${ ui.message('uicommons.edit')}</a>
+                    </p>
                 </div>
 
             </div>

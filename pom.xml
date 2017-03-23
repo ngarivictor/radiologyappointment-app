@@ -75,6 +75,12 @@
             </dependency>
 
             <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>2.2</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.openmrs.module</groupId>
                 <artifactId>uilibrary-api</artifactId>
                 <version>2.0.4</version>

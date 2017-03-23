@@ -1,0 +1,36 @@
+#appointmentGridTable {
+    width: 900px;
+}
+
+#appointmentGridTable .ngCell, #appointmentGridTable .ngCellText {
+    cursor: initial !important;
+}
+
+#appointmentGridTable .ngRow.even:hover {
+    background: #FFFFFF;
+    color: #555;
+}
+
+#appointmentGridTable .ngRow.even.selected {
+    background: #FFFFFF;
+    color: #555;
+}
+
+#appointmentGridTable .ngRow.odd:hover {
+    background: #fffdf7;
+    color: #555;
+}
+
+#appointmentGridTable .ngRow.odd.selected {
+    background: #fffdf7;
+    color: #555;
+}
+
+#appointmentGridTable .col5 {
+    text-align: center;
+}
+
+.inline-box {
+    display: inline-block;
+    padding: 5px;
+}

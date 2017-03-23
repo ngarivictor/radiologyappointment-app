@@ -15,7 +15,7 @@
     ui.includeJavascript("uicommons", "angular-ui/ng-grid-2.0.7.min.js")
     ui.includeJavascript("uicommons", "angular-ui/ng-grid-locale_ht-custom.js")
     ui.includeJavascript("uicommons", "angular-resource.min.js")
-    ui.includeJavascript("uicommons", "moment-with-locales.min.js")
+//    ui.includeJavascript("uicommons", "moment-with-locales.min.js")
     ui.includeJavascript("uicommons", "emr.js")
 
     ui.includeJavascript("uicommons", "angular-common.js")
