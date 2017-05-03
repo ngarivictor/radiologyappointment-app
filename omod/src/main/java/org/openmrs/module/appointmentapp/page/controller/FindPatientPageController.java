@@ -19,7 +19,7 @@ public class FindPatientPageController {
 	 * @param sessionContext
 	 */
 	public void get(PageModel model, UiSessionContext sessionContext,
-					@RequestParam(value = "appointmentBlockId") String appointmentBlockId,
+					@RequestParam(value = "appointmentBlockId", required = false) String appointmentBlockId,
                     UiUtils ui) {
         model.addAttribute("afterSelectedUrl", "/appointmentapp/scheduleAppointment.page?patientId={{patientId}}&appointmentBlock="+appointmentBlockId);
         model.addAttribute("heading", "");

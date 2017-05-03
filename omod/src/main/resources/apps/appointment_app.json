@@ -7,7 +7,7 @@
         "id": "appointmentapp.appointmentAppHomepageLink",
         "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
         "type": "link",
-        "label": "Appointment Scheduling",        // text or message code (this is shown to the user)
+        "label": "appointmentapp.title",        // text or message code (this is shown to the user)
         "url": "appointmentapp/main.page",        // clicking on the app icon goes to this link,
         "order": 8,
         "icon": "icon-tasks",        // see the uicommons style guide icons
