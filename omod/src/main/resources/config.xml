@@ -7,7 +7,7 @@
 	<name>${project.parent.name}</name>
 	<version>${project.parent.version}</version>
 	<package>${project.parent.groupId}.${project.parent.artifactId}</package>
-	<author>Victor</author>
+	<author>Stanslaus, Francis, Kennedy</author>
 	<description>
 		${project.parent.description}
 	</description>
@@ -30,6 +30,10 @@
 			org.openmrs.module.hospitalcore
 		</require_module>
 
+		<require_module version="1.4">
+			org.openmrs.module.appointmentscheduling
+		</require_module>
+
 		<require_module version="1.0.1">
 			org.openmrs.module.referenceapplication
 		</require_module>
@@ -37,7 +41,7 @@
 	<!-- / Required Modules -->
 	
 	<!-- Module Activator -->
-	<activator>${project.parent.groupId}.${project.parent.artifactId}.RadiologyAppActivator</activator>
+	<activator>${project.parent.groupId}.${project.parent.artifactId}.AppointmentAppActivator</activator>
 	
 	
 	<!-- Adds link to admin page -->
@@ -48,15 +52,15 @@
 	
 	<!-- Maps hibernate file's, if present -->
 	<mappingFiles>
-				
-		RadiologyApp.hbm.xml
+
+		AppointmentApp.hbm.xml
 				
 	</mappingFiles>
 
 	<!-- Internationalization -->
 	<privilege>
-		<name>App: radiologyapp</name>
-		<description>Able to access radiologyapp</description>
+		<name>App: appointmentapp</name>
+		<description>Able to access Appointments</description>
 	</privilege>
 	<!-- All message codes should start with ${project.parent.artifactId}. -->
 	<messages>

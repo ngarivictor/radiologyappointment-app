@@ -28,7 +28,7 @@
 	<!-- Annotation based controllers -->
 	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
 	
-	<context:component-scan base-package="org.openmrs.module.radiologyapp.web.controller" />
+	<context:component-scan base-package="org.openmrs.module.appointmentapp.web.controller" />
 	<bean class="org.openmrs.ui.framework.StandardModuleUiConfiguration">
 		<property name="moduleId" value="${project.parent.artifactId}"/>
 	</bean>

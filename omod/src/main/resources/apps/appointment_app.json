@@ -1,0 +1,18 @@
+[
+  {
+    "id": "appointmentapp.appointmentapp",        // unique id for this app, unique across all apps, typically starts with your module id
+    "description": "App for managing patient scheduling",        // plain text or a message code (not displayed to end-users)
+    "extensions": [
+      {
+        "id": "appointmentapp.appointmentAppHomepageLink",
+        "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+        "type": "link",
+        "label": "appointmentapp.title",        // text or message code (this is shown to the user)
+        "url": "appointmentapp/main.page",        // clicking on the app icon goes to this link,
+        "order": 8,
+        "icon": "icon-tasks",        // see the uicommons style guide icons
+        "requiredPrivilege": "Access Appointments"        // require this privilege to show the link
+      }
+    ]
+  }
+]

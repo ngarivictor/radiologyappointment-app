@@ -1,53 +1,12 @@
 <%
-    ui.decorateWith("appui", "standardEmrPage", [title: "Radiology"])
-    ui.includeCss("radiologyapp", "radiology.css")
+    ui.decorateWith("appui", "standardEmrPage", [title: "Appointment Scheduling"])
+    ui.includeCss("appointmentapp", "radiology.css")
     ui.includeJavascript("uicommons", "moment.js")
-    ui.includeJavascript("radiologyapp", "jquery.form.js")
-    ui.includeJavascript("radiologyapp", "jq.browser.select.js")
+    ui.includeJavascript("appointmentapp", "jquery.form.js")
+    ui.includeJavascript("appointmentapp", "jq.browser.select.js")
 %>
 
-<script>
-    jq(function () {
-        jq(".radiology-tabs").tabs();
 
-        jq("#refresh").on("click", function () {
-            if (jq('#queue').is(':visible')) {
-                getQueueData();
-            }
-            else if (jq('#worklist').is(':visible')) {
-                getWorklistData();
-            }
-            else if (jq('#results').is(':visible')) {
-                getResultsData();
-            }
-            else {
-                jq().toastmessage('showErrorToast', "Tab Content not Available");
-            }
-        });
-
-        jq("#inline-tabs li").click(function () {
-            if (jq(this).attr("aria-controls") == "queue") {
-                jq('#refresh a').html('<i class="icon-refresh"></i> Get Patients');
-                jq('#refresh a').show(500);
-                getQueueData(false);
-            }
-            else if (jq(this).attr("aria-controls") == "worklist") {
-                jq('#refresh a').html('<i class="icon-refresh"></i> Get Worklist');
-                jq('#refresh a').show(500);
-                getWorklistData(false);
-            }
-            else if (jq(this).attr("aria-controls") == "results") {
-                jq('#refresh a').html('<i class="icon-refresh"></i> Get Results');
-                jq('#refresh a').show(500);
-                getResultsData(false);
-            }
-            else if (jq(this).attr("aria-controls") == "status") {
-                jq('#refresh a').hide(500);
-                getBillableServices();
-            }
-        });
-    });
-</script>
 
 <style>
 .new-patient-header .identifiers {
@@ -219,7 +178,7 @@ form input[type="checkbox"] {
 
                 <li>
                     <i class="icon-chevron-right link"></i>
-                    Radiology
+                    Appointment Scheduling
                 </li>
             </ul>
         </div>
@@ -228,45 +187,59 @@ form input[type="checkbox"] {
     <div class="patient-header new-patient-header">
         <div class="demographics">
             <h1 class="name" style="border-bottom: 1px solid #ddd;">
-                <span>&nbsp;RADIOLOGY MODULE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+                <span>&nbsp;APPOINTMENT SCHEDULING MODULE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
             </h1>
         </div>
 
         <div class="show-icon">
             &nbsp;
         </div>
+    </div>
 
-        <div class="radiology-tabs" style="margin-top: 12px;">
-            <ul id="inline-tabs">
-                <li><a href="#queue">Queue</a></li>
-                <li><a href="#worklist">Worklist</a></li>
-                <li><a href="#results">Results</a></li>
-                <li><a href="#status">Functional Status</a></li>
+    <div id="apps">
 
-                <li id="refresh" class="ui-state-default">
-                    <a style="color:#fff" class="button confirm">
-                        <i class="icon-refresh"></i>
-                        Get Patients
-                    </a>
-                </li>
-            </ul>
+        <% if (context.hasPrivilege("App: appointmentschedulingui.appointmentTypes")) { %>
+        <a class="button app big" href="${ui.pageLink("appointmentapp", "manageAppointmentTypes")}"
+           id="appointmentschedulingui-manageAppointmentTypes-app">
+            <i class="icon-user-md"></i>
+            ${ui.message("appointmentschedulingui.appointmenttype.label")}
+        </a>
+        <% } %>
 
-            <div id="queue">
-                ${ui.includeFragment("radiologyapp", "queue")}
-            </div>
+        <% if (context.hasPrivilege("App: appointmentschedulingui.providerSchedules")) { %>
+        <a class="button app big" href="${ui.pageLink("appointmentapp", "scheduleProviders")}"
+           id="appointmentschedulingui-scheduleProviders-app">
+            <i class="icon-group"></i>
+            ${ui.message("appointmentschedulingui.scheduleProviders.app.title")}
+        </a>
+        <% } %>
 
-            <div id="worklist">
-                ${ui.includeFragment("radiologyapp", "worklist", [investigations: investigations])}
-            </div>
+        <% if (context.hasPrivilege("App: appointmentschedulingui.viewAppointments")) { %>
+        <a class="button app big" href="${ui.pageLink("appointmentapp", "manageAppointments")}"
+           id="appointmentschedulingui-manageAppointments-app">
+            <i class="icon-stethoscope"></i>
+            ${ui.message("appointmentschedulingui.scheduleAppointment.buttonTitle")}
+        </a>
+        <% } %>
 
-            <div id="results">
-                ${ui.includeFragment("radiologyapp", "results")}
-            </div>
+        <% if (context.hasPrivilege("App: appointmentschedulingui.viewAppointments")) { %>
+        <a class="button app big" href="${ui.pageLink("appointmentapp", "dailyScheduledAppointments")}"
+           id="appointmentschedulingui-scheduledAppointments-app">
+            <i class="icon-user"></i>
+            ${ui.message("appointmentschedulingui.dailyScheduledAppointments.title")}
+        </a>
+        <% } %>
 
-            <div id="status">
-                ${ui.includeFragment("radiologyapp", "functionalStatus")}
-            </div>
-        </div>
+
+
+        <% if (context.hasPrivilege("Task: appointmentschedulingui.bookAppointments")) { %>
+        <a class="button app big" href="${ui.pageLink("appointmentapp", "appointmentStatistics")}"
+           id="appointmentschedulingui-appointmentRequests-app">
+            <i class="icon-medkit"></i>
+            ${ui.message("appointmentapp.statistics.title")}
+        </a>
+        <% } %>
+
     </div>
 </div>
 
