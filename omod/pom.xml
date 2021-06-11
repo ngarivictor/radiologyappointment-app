@@ -55,10 +55,6 @@
             <artifactId>hospitalcore-api</artifactId>
         </dependency>
 
-        <dependency>
-            <groupId>org.openmrs.module</groupId>
-            <artifactId>referenceapplication-omod</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.openmrs.module</groupId>
@@ -68,6 +64,16 @@
         <dependency>
             <groupId>org.openmrs.module</groupId>
             <artifactId>appui-omod</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>kenyaui-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openmrs.module</groupId>
+            <artifactId>kenyaemr-api</artifactId>
         </dependency>
 
         <!-- End OpenMRS modules -->
