@@ -6,12 +6,13 @@ import org.openmrs.module.appointmentapp.utils.EmrApiConstants;
 import org.openmrs.module.appui.UiSessionContext;
 import org.openmrs.module.hospitalcore.RadiologyService;
 import org.openmrs.module.hospitalcore.model.RadiologyDepartment;
+import org.openmrs.module.kenyaui.annotation.AppPage;
 import org.openmrs.ui.framework.UiUtils;
 import org.openmrs.ui.framework.page.PageModel;
 import org.openmrs.ui.framework.page.PageRequest;
 
 import java.util.Set;
-
+@AppPage(EmrApiConstants.APP_RADIOLOGY_APP)
 public class MainPageController {
 	
 	public void get(

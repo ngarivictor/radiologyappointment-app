@@ -22,7 +22,7 @@
 
 	<!-- Add here beans related to the web context -->
 	<bean class="org.openmrs.ui.framework.StandardModuleUiConfiguration">
-		<property name="moduleId" value="${project.parent.artifactId}"/>
+		<property name="moduleId" value="appointmentapp"/>
 	</bean>
 	 
 	<!-- Annotation based controllers -->
@@ -30,7 +30,7 @@
 	
 	<context:component-scan base-package="org.openmrs.module.appointmentapp.web.controller" />
 	<bean class="org.openmrs.ui.framework.StandardModuleUiConfiguration">
-		<property name="moduleId" value="${project.parent.artifactId}"/>
+		<property name="moduleId" value="appointmentapp"/>
 	</bean>
 		
 </beans>

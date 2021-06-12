@@ -84,6 +84,10 @@ public class EmrApiConstants {
     public static final String REQUEST_PARAMETER_NAME_REDIRECT_URL = "redirectUrl";
     public static final String COOKIE_NAME_LAST_SESSION_LOCATION = "referenceapplication.lastSessionLocation";
 
+    public static final String MODULE_ID = "appointmentapp";
+
+    public static final String APP_RADIOLOGY_APP = MODULE_ID + ".appointmentapp";
+
     public EmrApiConstants() {
     }
 }

@@ -19,8 +19,25 @@
 
 	<!-- Add here beans related to the API context -->
 
-	
+    <context:component-scan base-package="org.openmrs.module.appointmentapp" />
 	<!-- Services accessible via Context.getService() -->
+
+    <bean id="appointmentapp.app.appointmentapp" factory-bean="kenyacore.appFactoryBean" factory-method="createInstance">
+        <constructor-arg value="appointmentapp.radiology" />
+        <constructor-arg value="Appointment" />
+        <constructor-arg value="appointmentapp/main.page" />
+        <constructor-arg value="appointmentapp:apps/appointment.png" />
+        <constructor-arg value="3000" />
+    </bean>
+    <bean id="radiologyapp.app.radiologyapp" factory-bean="kenyacore.appFactoryBean" factory-method="createInstance">
+        <constructor-arg value="appointmentapp.radiology" />
+        <constructor-arg value="Radiology" />
+        <constructor-arg value="radiologyapp/main.page" />
+        <constructor-arg value="appointmentapp:apps/BookAppointment-Service-Icon.png" />
+        <constructor-arg value="3000" />
+    </bean>
+
+
 	<bean parent="serviceContext">
 		<property name="moduleService">
 			<list>
