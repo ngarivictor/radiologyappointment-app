@@ -86,7 +86,8 @@ public class EmrApiConstants {
 
     public static final String MODULE_ID = "appointmentapp";
 
-    public static final String APP_RADIOLOGY_APP = MODULE_ID + ".appointmentapp";
+    public static final String APP_RADIOLOGY_APP = MODULE_ID + ".appointment";
+
 
     public EmrApiConstants() {
     }

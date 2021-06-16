@@ -26,7 +26,7 @@
             actions: {
                 confirm: function() {
                     saveQueueSchedule();
-					jq.post('${ui.actionLink("radiologyapp", "queue", "rescheduleOrder")}', { 
+					jq.post('${ui.actionLink("appointmentapp", "queue", "rescheduleOrder")}', {
 						"orderId" : orderId.val(), 
 						"rescheduledDate" : moment(scheduleDate.val()).format('DD/MM/YYYY') },
 						function (data) {
@@ -64,7 +64,7 @@
 
         jq('#radiology-queue-results-table').on('click', '.accept-link', function () {
             var orderId = jq(this).data('orderId');
-            jq.post('${ui.actionLink("radiologyapp", "queue", "acceptOrder")}', {
+            jq.post('${ui.actionLink("appointmentapp", "queue", "acceptOrder")}', {
                 'orderId' : orderId,
             },
             function (data) {
@@ -97,7 +97,7 @@
 		var orderDate = jq("#queue-order-date-field").val();
 		var investigation = jq("#investigation").val();
 		
-		jq.getJSON('${ui.actionLink("radiologyapp", "queue", "searchQueue")}',{
+		jq.getJSON('${ui.actionLink("appointmentapp", "queue", "searchQueue")}',{
 			"orderDate": moment(orderDate).format('DD/MM/YYYY'),
 			"phrase": '',
 			"investigation": investigation,
